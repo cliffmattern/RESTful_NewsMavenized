@@ -7,20 +7,20 @@ import java.util.ResourceBundle;
 
 public class ConnectionHelper {
 
-    private String                  url;
-    private static ConnectionHelper instance;
+    private String                  url      = null;
+    private String                  driver   = null;
+    private static ConnectionHelper instance = null;
 
     private ConnectionHelper() {
 
-        String driver = null;
         String user = "root";
         String password = "root";
 
         try {
 
             // ein ResourceBundle liest aus der *.properties-Datei seine Infos
-            // raus, weiter unten wird auch das ResourceBundle zusaetzlich als
-            // Singelton benutzt
+            // raus, weiter unten wird auch das ResourceBundle/Connection
+            // zusaetzlich als Singelton benutzt, wegen dem aus der Datei lesen.
             ResourceBundle bundle = ResourceBundle.getBundle("news");
             driver = bundle.getString("jdbc.driver");
 
