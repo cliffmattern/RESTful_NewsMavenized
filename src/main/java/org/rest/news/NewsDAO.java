@@ -20,7 +20,7 @@ import java.util.List;
 
 public class NewsDAO {
 
-    // Field h‰lt Referenz auf einzigartige Instanz
+    // Field h√§lt Referenz auf einzigartige Instanz
     // private static NewsDAO instance = null;
     private static volatile NewsDAO instance    = null;
     private static long             createtime  = 0;

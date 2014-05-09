@@ -10,19 +10,21 @@
 	<url>http://maven.apache.org</url>
 
 	<repositories>
+
 		<repository>
 			<id>java.net</id>
 			<url>https://maven.java.net/content/repositories/public/</url>
 		</repository>
+
 	</repositories>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
@@ -47,11 +49,14 @@
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-servlet</artifactId>
 		</dependency>
+
 	</dependencies>
 
 	<build>
+
 		<finalName>${project.artifactId}</finalName>
 		<testSourceDirectory>src/main/test</testSourceDirectory>
+
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -66,6 +71,7 @@
 				</excludes>
 			</resource>
 		</resources>
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
@@ -90,8 +96,11 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
 	</build>
+
 	<dependencyManagement>
+
 		<dependencies>
 			<dependency>
 				<groupId>junit</groupId>
@@ -128,6 +137,26 @@
 				<artifactId>jersey-servlet</artifactId>
 				<version>1.18</version>
 			</dependency>
+			<dependency>
+				<groupId>org.jmockit</groupId>
+				<artifactId>jmockit</artifactId>
+				<version>${jmockit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jmockit</groupId>
+				<artifactId>jmockit-coverage</artifactId>
+				<version>${jmockit.coverage.version}</version>
+				<scope>runtime</scope>
+			</dependency>
 		</dependencies>
+
 	</dependencyManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<jmockit.version>1.7</jmockit.version>
+	</properties>
 </project>

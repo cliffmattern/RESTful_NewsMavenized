@@ -18,7 +18,7 @@ class News {
     private String category;
     private Date   createdate;
 
-    // verhinderte Instanziierung von ganz außen
+    // verhinderte Instanziierung von ganz auÃŸen
     News() {
 
     }
